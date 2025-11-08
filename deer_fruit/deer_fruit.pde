@@ -1,4 +1,3 @@
-// --- Recursos ---
 PImage fondo;
 PImage oso_default, oso_happy, oso_sad, oso_surprised;
 PImage deer_default, deer_happy, deer_seriusly, deer_surprised;
@@ -149,7 +148,7 @@ PImage imagenOsoParaEstado() {
   return oso_default;
 }
 
-PImage imagenCiervoParaEstado() {
+PImage imagenCiervoParaEstado() { ///VOLVER UNA CLASE
   if (estado == 0) return deer_default;
   if (estado == 1) return deer_happy;
   if (estado == 2) return deer_seriusly;
@@ -158,7 +157,7 @@ PImage imagenCiervoParaEstado() {
 }
 
 // --- UI ---
-void mostrarCuadroDialogo() {
+void mostrarCuadroDialogo() { ///CLASE BOTON
   // Cuadro en la parte inferior
   float boxX = 20;
   float boxY = height - 130;
@@ -185,11 +184,11 @@ void mostrarBoton(PVector pos, String label) {
   float w = 100, h = 40;
   boolean hover = mouseX > pos.x && mouseX < pos.x + w && mouseY > pos.y && mouseY < pos.y + h;
 
-  fill(hover ? color(255, 230, 160) : color(255, 210, 120));
+  fill(hover ? color(255, 230, 160) : color(255, 210, 120)); 
   stroke(60);
   rect(pos.x, pos.y, w, h, 8);
 
-  fill(0);
+  fill(0); ///BOTON 
   textAlign(CENTER, CENTER);
   text(label, pos.x + w/2, pos.y + h/2);
 }
